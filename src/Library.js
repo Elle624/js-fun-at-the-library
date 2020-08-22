@@ -22,13 +22,14 @@ function addBook(libraryName,bookName) {
 }
 
 function checkoutBook(libraryName,book) {
- 
-  if (book === "Pride and Prejudice"){
-    libraryName.shelves.fiction.shift();
-    return `You have now checked out ${book} from the ${libraryName.name}`;
-  } else {
-    return `Sorry, there are currently no copies of ${book} available at the ${libraryName.name}`
+  var totalShelves = libraryName.shelves.fiction;
+  for (var i=0; i<totalShelves.length; i++){
+    if (book === totalShelves[i].title){
+      totalShelves.shift();    
+      return `You have now checked out ${book} from the ${libraryName.name}`;
+    } 
   }
+  return `Sorry, there are currently no copies of ${book} available at the ${libraryName.name}`
 }
 
 module.exports = {
