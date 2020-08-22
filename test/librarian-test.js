@@ -71,7 +71,7 @@ describe('Librarian (class)', function() {
     var book = { title: 'The Fifth Season', genre: 'fantasy' }
 
     addBook(librarian.library, book);
-
+    
     var bookConfirmation = librarian.findBook("Five Brief Lessons in Physics");
 
     assert.equal(bookConfirmation, "Sorry, we do not have Five Brief Lessons in Physics");

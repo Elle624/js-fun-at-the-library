@@ -8,28 +8,42 @@ class Librarian {
   }
 
   greetPatron(patronName,value) {
-    if (value===true){
-      return `Good morning, ${patronName}!`
-    }else{
+    if (!value){
       return `Hello, ${patronName}!`
+    }else{
+      return `Good morning, ${patronName}!`
     }    
   }  
 
-findBook(bookName) {
-  var fantasyShelf = this.library.shelves.fantasy
-  for (var i=0; i<fantasyShelf.length; i++){
-    if (bookName===fantasyShelf[i].title){
-      fantasyShelf.shift()
-      return `Yes, we have ${bookName}`
-    }else {
-      return `Sorry, we do not have ${bookName}`
-    }
-  }
-}
+  findBook(bookName) {
+    var fantasyShelf = this.library.shelves.fantasy
+    var fictionShelf = this.library.shelves.fiction
+    var nonFictionShelf = this.library.shelves.nonFiction
 
-calculateLateFee(numOfDate){
-  return Math.ceil(numOfDate*0.25)
-}
+    for (var i=0; i<fantasyShelf.length; i++){
+      if (bookName===fantasyShelf[i].title){
+        fantasyShelf.shift()
+        return `Yes, we have ${bookName}`
+      }
+    }
+    for (var i=0; i<fictionShelf.length; i++){
+      if (bookName===fictionShelf[i].title){
+        fictionShelf.shift()
+        return `Yes, we have ${bookName}`
+      }
+    }
+    for (var i=0; i<nonFictionShelf.length; i++){
+      if (bookName===nonFictionShelf[i].title){
+        nonFictionShelf.shift()
+        return `Yes, we have ${bookName}`
+      }
+    }
+    return `Sorry, we do not have ${bookName}`
+  }
+
+  calculateLateFee(numOfDate){
+    return Math.ceil(numOfDate*0.25)
+  }
 
 
 
