@@ -19,6 +19,7 @@ findBook(bookName) {
   var fantasyShelf = this.library.shelves.fantasy
   for (var i=0; i<fantasyShelf.length; i++){
     if (bookName===fantasyShelf[i].title){
+      fantasyShelf.shift()
       return `Yes, we have ${bookName}`
     }else {
       return `Sorry, we do not have ${bookName}`
@@ -26,7 +27,9 @@ findBook(bookName) {
   }
 }
 
-
+calculateLateFee(numOfDate){
+  return Math.ceil(numOfDate*0.25)
+}
 
 
 
