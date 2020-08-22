@@ -22,12 +22,21 @@ function addBook(libraryName,bookName) {
 }
 
 function checkoutBook(libraryName,book) {
-  var totalShelves = libraryName.shelves.fiction;
-  for (var i=0; i<totalShelves.length; i++){
-    if (book === totalShelves[i].title){
-      totalShelves.shift();    
+  var fictionShelf = libraryName.shelves.fiction;
+  var fantasyShelf = libraryName.shelves.fantasy;
+  var nonFictionShelf = libraryName.shelves.nonFiction;
+
+  for (var i=0; i<fictionShelf.length; i++){
+    if (book === fictionShelf[i].title){
+      fictionShelf.splice(i,1);    
       return `You have now checked out ${book} from the ${libraryName.name}`;
-    } 
+    } else if (book === fantasyShelf[i].title){
+      fantasyShelf.splice(i,1);    
+      return `You have now checked out ${book} from the ${libraryName.name}`;
+    } else if (book === nonFictionShelf[i].title){
+      nonFictionShelf.splice(i,1);    
+      return `You have now checked out ${book} from the ${libraryName.name}`;
+    }
   }
   return `Sorry, there are currently no copies of ${book} available at the ${libraryName.name}`
 }
