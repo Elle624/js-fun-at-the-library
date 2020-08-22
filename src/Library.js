@@ -16,7 +16,7 @@ function addBook(libraryName,bookName) {
     else if (bookName.genre==='nonFiction'){
   libraryName.shelves.nonFiction.push(bookName)
   }
-  else if (bookName.genre==='fiction'){
+    else if (bookName.genre==='fiction'){
     libraryName.shelves.fiction.push(bookName)
   }
 }
