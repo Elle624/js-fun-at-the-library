@@ -14,15 +14,11 @@ function unshelfBook(name,shelf) {
 }
 
 function listTitles(newShelf) {
-  var list = ""
+  var list = []
   for (var i=0; i<newShelf.length; i++){
-    if (i<newShelf.length -1) {
-    list +=  newShelf[i].title +", "
-    } else {
-      list +=  newShelf[i].title 
-    }
-  }  
-  return list
+    list.push(newShelf[i].title)
+  }
+  return list.join(", ")
 }
 
 function searchShelf(shelf,name) {
@@ -32,11 +28,6 @@ function searchShelf(shelf,name) {
   }
     return titles.includes(name)
 }
-  // if (name=== "Hyperion") {
-  //   return true
-  // } else {
-  //   return false
-  // }
 
 module.exports = {
   shelfBook: shelfBook,
