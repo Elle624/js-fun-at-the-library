@@ -11,10 +11,10 @@ function createLibrary(newName) {
 
 function addBook(libraryName,bookName) {
   if (bookName.genre==="fantasy"){
-  libraryName.shelves.fantasy.push(bookName)
+    libraryName.shelves.fantasy.push(bookName)
   } 
     else if (bookName.genre==='nonFiction'){
-  libraryName.shelves.nonFiction.push(bookName)
+    libraryName.shelves.nonFiction.push(bookName)
   }
     else if (bookName.genre==='fiction'){
     libraryName.shelves.fiction.push(bookName)
