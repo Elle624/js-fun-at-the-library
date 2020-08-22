@@ -22,12 +22,20 @@ function listTitles(newShelf) {
 }
 
 function searchShelf(shelf,name) {
-  var titles =""
   for (var i=0; i<shelf.length; i++){
-    titles += shelf[i].title+ ","
+    if (shelf[i].title===name){
+      return true
+    }
   }
-    return titles.includes(name)
+  return false
 }
+// function searchShelf(shelf,name) {
+//   var titles =""
+//   for (var i=0; i<shelf.length; i++){
+//     titles += shelf[i].title+ ","
+//   }
+//     return titles.includes(name)
+// }
 
 module.exports = {
   shelfBook: shelfBook,
