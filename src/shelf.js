@@ -5,7 +5,6 @@ function shelfBook(name,shelf) {
 }
 
 function unshelfBook(name,shelf) {
-  //shelf.splice(1,1)
   for (var i= 0; i<shelf.length ; i++){
     if (shelf[i].title===name) {
       shelf.splice(i,1);
@@ -29,13 +28,7 @@ function searchShelf(shelf,name) {
   }
   return false
 }
-// function searchShelf(shelf,name) {
-//   var titles =""
-//   for (var i=0; i<shelf.length; i++){
-//     titles += shelf[i].title+ ","
-//   }
-//     return titles.includes(name)
-// }
+
 
 module.exports = {
   shelfBook: shelfBook,
