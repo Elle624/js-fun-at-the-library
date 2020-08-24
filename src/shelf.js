@@ -20,13 +20,8 @@ function listTitles(newShelf) {
   return list.join(", ")
 }
 
-function searchShelf(shelf,name) {
-  for (var i=0; i<shelf.length; i++){
-    if (shelf[i].title===name){
-      return true
-    }
-  }
-  return false
+function searchShelf(shelf,name) { 
+  return shelf.includes(shelf.find(function(item){ return item.title===(name)})); 
 }
 
 
